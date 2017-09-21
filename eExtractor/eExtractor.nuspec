@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>DeftSoft.eExtractor</id>
+    <version>0.1</version>
+    <title>eExtractor</title>
+    <authors>DeftSoftSteven</authors>
+    <owners>DeftSoftSteven</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/stevenGame/eExtractor</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/stevenGame/eExtractor/master/eExtractor/eExtractor.PNG</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>enterprise data extractor for PDF word or excel</description>
+    <releaseNotes>enterprise data extractor for PDF word or excel.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>Extractor File PDF enterprise</tags>
+  </metadata>
+</package>
