@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\ISavable.cs" />
+    <Compile Include="Entity\SavableEntity.cs" />
     <Compile Include="Extension\ObjectExtensions.cs" />
     <Compile Include="Extension\RegexExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
@@ -74,8 +76,6 @@
     <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entity\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

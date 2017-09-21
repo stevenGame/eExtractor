@@ -1,0 +1,138 @@
+
+EVO MERCHANT SERVICES LLC  
+C/O EVO MERCHANT SERVICES  
+515 BROADHOLLOW RD  
+MELVILLE, NY 11747  
+1-800-705-2559  
+MERCHANT SERVICES INC  
+515 BROADHOLLOW RD  
+MELVILLE, NY 11747   
+CORRECTED (if checked)  
+FILER'S name, street address, city, state, ZIP code, and telephone no.  
+FILER'S federal identification no.  
+OMB No. 1545-2205  
+Payment Card  
+and Third Party  
+Network  
+Transactions  
+EVO MERCHANT SERVICES LLC  
+C/O EVO MERCHANT SERVICES  
+515 BROADHOLLOW RD  
+MELVILLE, NY 11747  
+1-800-705-2559  
+45-4145354  
+PAYEE'S taxpayer identification no.  
+2012  
+113019324  
+Form  1099-K  
+1  Gross amount of payment card/third  
+Check to indicate if FILER is a (an):  
+Check to indicate transactions  
+party network transactions  
+Copy B  
+For Payee  
+This is important tax  
+information and is being  
+furnished to the Internal  
+Revenue Service. If you  
+are required to file a  
+return, a negligence  
+penalty or other  
+sanction may be  
+imposed on you if  
+taxable income  
+results from this  
+transaction and the IRS  
+determines that it has not  
+been reported.  
+2  Merchant category code  
+reported are:  
+   $77,405.39  
+7399  
+Payment settlement entity (PSE)  
+X  
+X  
+Payment card  
+3  Number of purchase transactions (optional)  
+4  
+Electronic Payment Facilitator  
+(EPF)/Other third party  
+Third party network  
+378  
+PAYEE'S name, street address, city, state, and ZIP code  
+5a  January  
+5b  February  
+    $5,360.15  
+    $8,198.08  
+MERCHANT SERVICES INC  
+515 BROADHOLLOW RD  
+MELVILLE, NY 11747   
+5c  March  
+5d  April  
+    $8,942.13  
+   $10,318.54  
+5e  May  
+5f  June  
+    $6,917.69  
+    $6,139.34  
+5g  July  
+5h  August  
+    $5,714.28  
+    $6,746.22  
+PSE'S name and telephone number  
+5i   September  
+5j  October  
+    $5,898.92  
+    $6,886.33  
+5k  November  
+5l  December  
+    $3,779.81  
+    $2,503.90  
+Account number (see instructions)  
+6  
+7  
+8  
+0000270200001005  
+Form  1099-K  
+(keep for your records)  
+IRS.gov/form1099k  
+Department of the Treasury - Internal Revenue Service  
+1099-K Instructions for Payee  
+   
+You have received this form because you have either: (a) accepted payment cards for  
+payments, or (b) received payments through a third party network that exceeded  
+$20,000 in gross total reportable transactions and the aggregate number of those  
+transactions exceeded 200 for the calendar year. Merchant acquirers and third party  
+settlement organizations, as payment settlement entities (PSE), must report the proceeds  
+of payment card and third party network transactions made to you on Form 1099-K  
+under Internal Revenue Code section 6050W. The PSE may have contracted with an  
+electronic payment facilitator (EPF) or other third party payer to make payments to you.  
+   If you have questions about the amounts reported on this form, contact the FILER  
+whose information is shown in the upper left corner on the front of this form. If you do  
+not recognize the FILER shown in the upper left corner of the form, contact the PSE  
+whose name and phone number are shown in the lower left corner of the form above  
+your account number.  
+   See the separate instructions for your income tax return for using the information  
+reported on this form.  
+Payee's taxpayer identification number.  For your protection, this form may show only  
+the last four digits of your social security number (SSN), individual taxpayer identification  
+   
+   
+number (ITIN), or adoption taxpayer identification number (ATIN). However,  
+the issuer has reported your complete identification number to the IRS, and, where   
+applicable, to state and/or local governments.  Note.  If your EIN is reported in this box,  
+you should see the complete number in this format (XX-XXXXXXX).  
+Account number.  May show an account or other unique number the PSE assigned  
+to distinguish your account.  
+Box 1.  Shows the aggregate gross amount of payment card/third party network  
+transactions made to you through the PSE during the calendar year.  
+Box 2.  Shows the merchant category code used for payment card/third party network  
+transactions (if available) reported on this form.  
+Box 3.  May show the number of purchase transactions (not including refund transactions)  
+processed through the payment card/third party network. (Optional-The PSE is not required  
+to complete this box for 2012.)  
+Boxes 5a-5l.  Shows the gross amount of payment card/third party network transactions  
+made to you for each month of the calendar year.  
+   For the latest developments regarding Form 1099-K that may occur after this form is  
+printed, visit www.irs.gov/form1099k.  
+Page 1 of 1   

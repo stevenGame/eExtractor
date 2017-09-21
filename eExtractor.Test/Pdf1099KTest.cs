@@ -87,25 +87,7 @@ namespace eExtractor.Test
             //Assert.AreEqual("0000270200001005", f1099k.AccountNum);
         }
 
-        [TestMethod]
-        public void SaveMutipleTime()
-        {
-            using (var ctx = new Extract1099KEntities())
-            {
-                var testfile = Pdf1099K.GetByTaxYearAndID(2012, "113019324").FirstOrDefault();
-                var federalID = testfile.FederalID;
-                testfile.FederalID = "xxxxxxx";
-                testfile.Save(ctx);
-                ctx.SaveChanges();
-                var savedFile = Pdf1099K.GetByTaxYearAndID(2012, "113019324").FirstOrDefault();
-                Assert.AreEqual("xxxxxxx", testfile.FederalID);
-                testfile.FederalID = federalID;
-                testfile.Save(ctx);
-                ctx.SaveChanges();
-                savedFile = Pdf1099K.GetByTaxYearAndID(2012, "113019324").FirstOrDefault();
-                Assert.AreEqual(federalID, testfile.FederalID);
-            }
-        }
+      
 
     }
 }
