@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
-using eExtractor.Logic;
+
 using System.Collections.Generic;
+using eExtractor.Logic;
 
 namespace eExtractor.Nuget.Test
 {

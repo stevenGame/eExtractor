@@ -121,7 +121,7 @@ namespace eExtractor.Entity
         /// Except ID filed or custom ID property 
         /// </summary>
         /// <remarks>
-        /// TODO implement Get IDs ignore all the ID fields in Savable interface
+        /// TODO implement Get IDs ignore all the ID fields in Savable interface or ignore ID interface
         ///      if there are any table primary key not Name ID, or have multiple ID
         /// 
         /// </remarks>

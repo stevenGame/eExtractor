@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eExtractor.Logic
+namespace eExtractor.Parser
 {
     /// <summary>
     /// Parses a PDF file and extracts the text from it.

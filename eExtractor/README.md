@@ -9,6 +9,7 @@ $ Install-Package DeftSoft.eExtractor
 ```
 
 ### How to upload to Nuget
+* Change version number in **eExtractor.nuspec** file
 * Package
     ```cmd
     $ ..\tools\nuget.exe pack eExtractor.csproj

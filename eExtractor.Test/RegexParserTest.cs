@@ -1,4 +1,4 @@
-﻿using eExtractor.Logic;
+﻿using eExtractor.Parser;
 using eExtractor.Test.Entity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;

@@ -3,9 +3,10 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 using NLog;
-using eExtractor.Logic;
+using eExtractor.Parser;
 
 using eExtractor.Test.Entity;
+using eExtractor.Util;
 
 namespace eExtractor.Test
 {

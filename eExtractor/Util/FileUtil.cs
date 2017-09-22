@@ -1,11 +1,12 @@
-﻿using System;
+﻿using eExtractor.Parser;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eExtractor.Logic
+namespace eExtractor.Util
 {
     public class FileUtil
     {

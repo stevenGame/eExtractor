@@ -6,8 +6,9 @@ using System.Text;
 
 using iTextSharp.text.pdf;
 using eExtractor.Test.Entity;
+using eExtractor.Test;
 
-namespace eExtractor.Logic
+namespace eExtractor.Parser
 {
     /// TODO should not have file prefix but 1099 is a number
     /// <summary>
@@ -30,16 +31,18 @@ namespace eExtractor.Logic
         /// <returns></returns>
         public static Pdf1099K Parse(string content)
         {
-            File1099KParser _parser = Instance();
-            // for safety use new result every time
-            _parser._result = new Pdf1099K();
-            _parser.content = content;
-            _parser.ParseYear()
-                   .ParseTaxID()
-                   .ParseFederalID()
-                   .ParseAccountNum();
 
-            return _parser._result;
+            return RegexParser.Build(AppConfig.f1099kRulePath)
+                              .Parse<Pdf1099K>(content);
+            // for safety use new result every time
+            //_parser._result = new Pdf1099K();
+            //_parser.content = content;
+            //_parser.ParseYear()
+            //       .ParseTaxID()
+            //       .ParseFederalID()
+            //       .ParseAccountNum();
+
+
         }
         /// <summary>
         /// try to use read PDF form fields
@@ -53,7 +56,7 @@ namespace eExtractor.Logic
 
             return null;
         }
-       
+
         /// <summary>
         /// use singleton avoid new key word and save memory resource in loop 
         /// not thread save yet but can easily implement if need process file in multiple thread 

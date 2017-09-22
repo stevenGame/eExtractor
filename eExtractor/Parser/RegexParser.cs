@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
-namespace eExtractor.Logic
+namespace eExtractor.Parser
 {
     /// <summary>
     /// Generic parse text content or file to object

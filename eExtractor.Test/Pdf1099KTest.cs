@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System.Linq;
-using eExtractor.Logic;
-using eExtractor.Test.Entity;
+using eExtractor.Parser;
+using eExtractor.Util;
 
 namespace eExtractor.Test
 {
@@ -87,7 +86,7 @@ namespace eExtractor.Test
             //Assert.AreEqual("0000270200001005", f1099k.AccountNum);
         }
 
-      
+
 
     }
 }
