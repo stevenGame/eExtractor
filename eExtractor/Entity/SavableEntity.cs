@@ -14,30 +14,27 @@ namespace eExtractor.Entity
     /// </summary>
     /// <typeparam name="EntityT">Entity database context type</typeparam>
     /// <typeparam name="SourceT">Entity object type</typeparam>
-    public class SavableEntity<EntityT, SourceT>
+    public class SavableEntity<EntityT, SourceT> : Object
         where EntityT : DbContext, new()
         where SourceT : class, ISavable<SourceT>
     {
-
         public void Save(EntityT ctx, string updateOrCreateBy = null)
         {
-            ISavable<SourceT> _this = (ISavable<SourceT>)this;
-
             if (Exist(ctx))
             {
                 /// update the updates fields 
                 if (!string.IsNullOrEmpty(updateOrCreateBy))
                 {
-                    _this.UpdateBy = updateOrCreateBy;
+                    GetSavable().UpdateBy = updateOrCreateBy;
                 }
-                _this.UpdateAt = DateTime.Now;
+                GetSavable().UpdateAt = DateTime.Now;
 
                 // for performance only need switch and assign this object to exist object 
                 // when the entity detached 
-                if (ctx.Entry(_this.GetThis()).State == EntityState.Detached)
+                if (ctx.Entry(GetThis()).State == EntityState.Detached)
                 {
                     var existObj = ctx.Set<SourceT>()
-                                      .Where(_this.GetExistPredicate())
+                                      .Where(GetSavable().GetExistPredicate())
                                       .FirstOrDefault();
                     AssignTo(existObj);
                     OnUpdate(existObj);
@@ -45,20 +42,20 @@ namespace eExtractor.Entity
                 }
                 else
                 {
-                    ctx.Entry(_this.GetThis()).State = EntityState.Modified;
+                    ctx.Entry(GetThis()).State = EntityState.Modified;
                 }
 
             }
             else
             {
-                ctx.Set<SourceT>().Add(_this.GetThis());
+                ctx.Set<SourceT>().Add(GetThis());
                 if (!string.IsNullOrEmpty(updateOrCreateBy))
                 {
-                    _this.CreateBy = updateOrCreateBy;
+                    GetSavable().CreateBy = updateOrCreateBy;
                 }
-                _this.CreateAt = DateTime.Now;
+                GetSavable().CreateAt = DateTime.Now;
             }
-            _this.UpdateAt = DateTime.Now;
+            GetSavable().UpdateAt = DateTime.Now;
 
         }
 
@@ -79,8 +76,7 @@ namespace eExtractor.Entity
         {
             if (Exist(ctx))
             {
-                ISavable<SourceT> _this = (ISavable<SourceT>)this;
-                SourceT existObj = ctx.Set<SourceT>().Where(_this.GetExistPredicate()).FirstOrDefault();
+                SourceT existObj = ctx.Set<SourceT>().Where(GetSavable().GetExistPredicate()).FirstOrDefault();
                 ctx.Set<SourceT>().Remove(existObj);
                 ctx.SaveChanges();
                 return existObj;
@@ -103,8 +99,7 @@ namespace eExtractor.Entity
         /// <returns></returns>
         public bool Exist(EntityT ctx)
         {
-            var savable = (ISavable<SourceT>)this;
-            return ctx.Set<SourceT>().Any(savable.GetExistPredicate());
+            return ctx.Set<SourceT>().Any(GetSavable().GetExistPredicate());
         }
 
         /// <summary>
@@ -133,19 +128,19 @@ namespace eExtractor.Entity
         /// <returns>database object</returns>
         private SourceT AssignTo(SourceT databaseObj)
         {
-            SourceT obj = this.Cast<ISavable<SourceT>>().GetThis();
+
             // ignore ID property
             // TODO change it to function or interface make it more generic
-            List<PropertyInfo> needUpdate = obj.GetType()
+            List<PropertyInfo> needUpdate = GetSavable().GetType()
                                             .GetProperties()
                                             .Where(p => p.Name != "ID") // ignore ID
-                                            .Where(p => p.GetValue(obj) != null) // ignore null value from source
+                                            .Where(p => p.GetValue(GetSavable()) != null) // ignore null value from source
                                             .ToList();
 
             needUpdate.ForEach(p =>
             {
                 Type t = Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType;
-                object value = p.GetValue(obj);
+                object value = p.GetValue(GetSavable());
                 object safeValue = (value == null) ? null : Convert.ChangeType(value, t);
                 p.SetValue(databaseObj, safeValue, null);
             });
@@ -167,6 +162,25 @@ namespace eExtractor.Entity
             PropertyInfo idProp = GetType().GetProperty("ID");
             object dbId = idProp.GetValue(dbObject);
             idProp.SetValue(this, dbId);
+        }
+
+        /// <summary>
+        /// Get Source Object
+        /// </summary>
+        /// <returns></returns>
+        private SourceT GetThis()
+        {
+            return Convert
+                   .ChangeType(this, typeof(SourceT))
+                   .Cast<SourceT>();
+        }
+        /// <summary>
+        /// Get savable object
+        /// </summary>
+        /// <returns></returns>
+        private ISavable<SourceT> GetSavable()
+        {
+            return this.Cast<ISavable<SourceT>>();
         }
 
     }

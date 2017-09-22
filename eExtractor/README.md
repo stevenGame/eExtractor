@@ -5,7 +5,7 @@
 
 Open Nuget package manager console execute follow up command
 ```cmd
-$ 
+$ Install-Package DeftSoft.eExtractor
 ```
 
 ### How to upload to Nuget
@@ -22,7 +22,7 @@ $
 ### TODO
 
 [x] change entity to generic function if need support other type
- support generic save with different entity
-[] make ISavable support multiple primary key and other name of ID
-[] Add Excel parser and mapper
-[] Add word parser and mapper
+ support generic save with different entity  
+[o] make ISavable support multiple primary key and other name of ID  
+[o] Add Excel parser and mapper  
+[o] Add word parser and mapper  

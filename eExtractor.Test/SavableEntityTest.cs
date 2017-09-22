@@ -50,11 +50,10 @@ namespace eExtractor.Test
             Assert.AreNotEqual(0, testFile.ID);
             testFile.Delete();
 
-
         }
 
         [TestMethod]
-        public void TestUpdateNewInMemory()
+        public void NewInMemoryObjctUpdateTest()
         {
             var x = Pdf1099K.GetByTaxYearAndID(2012, "113019324").FirstOrDefault();
             var newObj = new Pdf1099K
@@ -71,7 +70,6 @@ namespace eExtractor.Test
             Assert.AreEqual(x.ID, newObj.ID);
             Assert.IsTrue(DateTime.Now.Subtract(newObj.UpdateAt.Value) < TimeSpan.FromSeconds(3));
         }
-
         [TestMethod]
         public void TestInContext()
         {

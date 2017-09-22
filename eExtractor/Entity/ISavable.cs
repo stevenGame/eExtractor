@@ -19,7 +19,5 @@ namespace eExtractor.Entity
         string CreateBy { get; set; }
         Nullable<System.DateTime> CreateAt { get; set; }
         Expression<Func<TSource, bool>> GetExistPredicate();
-        TSource GetThis();
-      
     }
 }
