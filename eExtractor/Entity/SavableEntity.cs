@@ -96,7 +96,9 @@ namespace eExtractor.Entity
         {
             if (Exist(ctx))
             {
-                SourceT existObj = ctx.Set<SourceT>().Where(GetSavable().GetExistPredicate()).FirstOrDefault();
+                SourceT existObj = ctx.Set<SourceT>()
+                                      .Where(GetSavable().GetExistPredicate())
+                                      .FirstOrDefault();
                 ctx.Set<SourceT>().Remove(existObj);
                 ctx.SaveChanges();
                 return existObj;
