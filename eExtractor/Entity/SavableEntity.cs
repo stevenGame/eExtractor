@@ -18,6 +18,26 @@ namespace eExtractor.Entity
         where EntityT : DbContext, new()
         where SourceT : class, ISavable<SourceT>
     {
+        /// <summary>
+        /// get object in database context 
+        /// </summary>
+        /// <param name="ctx"></param>
+        public SourceT Get(EntityT ctx)
+        {
+            return ctx.Set<SourceT>()
+                    .Where(GetSavable().GetExistPredicate())
+                    .FirstOrDefault();
+        }
+        /// <summary>
+        /// get object in database context without entity database context
+        /// </summary>
+        public SourceT Get()
+        {
+            using (var ctx = new EntityT())
+            {
+                return Get(ctx);
+            }
+        }
         public void Save(EntityT ctx, string updateOrCreateBy = null)
         {
             if (Exist(ctx))

@@ -7,7 +7,25 @@ Open Nuget package manager console execute follow up command
 ```cmd
 $ Install-Package DeftSoft.eExtractor
 ```
+### Usage 
+call parser from dictionary
+```csharp
+ var f1099k = RegexParser.Build(new Dictionary<string, string> {
+                { "TaxYear", @"^\d{4}\s+(.*\n){2,6}(Form\s+1099.*-.*K)\\,^\d{4}.*$" },
+                {"TaxID", @"PAYEE'S taxpayer identification no(.*\n){2,3}^\d{9}.*$\\,^\d{9}.*$" },
+                {
+                    "FederalID",
+                    @"FILER'S federal identification no(.*\n)+(\d{2}-\d{7}(.*\n))PAYEE'S taxpayer identification no\\,\d{2}-\d{7}(.*$)"
+                },
+                {"AccountNum", @"Account number.*\n(.*\n){3,5}(\d{16}).*\\,^(\d{16}).*$" },
 
+            }).Parse<Pdf1099K>(text);
+
+```
+call parser from file
+```csharp
+
+```
 ### How to upload to Nuget
 * Change version number in **eExtractor.nuspec** file
 * Package
