@@ -182,8 +182,12 @@ namespace eExtractor.Entity
         {
             // ID = existObj.ID;
             PropertyInfo idProp = GetType().GetProperty("ID");
-            object dbId = idProp.GetValue(dbObject);
-            idProp.SetValue(this, dbId);
+            if (idProp != null)
+            {
+                object dbId = idProp.GetValue(dbObject);
+                idProp.SetValue(this, dbId);
+            }
+
         }
 
         /// <summary>
