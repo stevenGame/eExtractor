@@ -75,7 +75,6 @@ namespace eExtractor.Entity
                 }
                 GetSavable().CreateAt = DateTime.Now;
             }
-            GetSavable().UpdateAt = DateTime.Now;
 
         }
 

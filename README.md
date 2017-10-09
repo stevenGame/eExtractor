@@ -3,5 +3,5 @@
 Entity framework database object
 
 ### TODO
-   [.] maybe can support web crawler for a sync call
+   - [ ] maybe can support web crawler for a sync call
     
