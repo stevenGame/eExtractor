@@ -86,9 +86,8 @@
     <Compile Include="Entity\Pdf1099K.cs">
       <DependentUpon>Extract1099KEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="File1099KParser.cs" />
+    <Compile Include="OffsetParserTest.cs" />
     <Compile Include="Pdf1099KExtractor.cs" />
-    <Compile Include="Pdf1099KTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegexParserTest.cs" />
     <Compile Include="SavableEntityTest.cs" />

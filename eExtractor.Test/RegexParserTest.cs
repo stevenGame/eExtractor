@@ -45,5 +45,49 @@ namespace ePdfExtractorUnitTest
             Assert.AreEqual("113019324", f1099k.TaxID);
             Assert.AreEqual("0000270200001005", f1099k.AccountNum);
         }
+        class Message
+        {
+            public string Code { get; set; }
+            public string TimeStamp { get; set; }
+            public string TextInBytes { get; set; }
+
+            // AFH Service Extension
+            public string FailedPanel { get; set; }
+
+            // Extensions
+            public string NewSerial { get; set; }
+            public string OriginalSerial { get; set; }
+            public string CardData { get; set; }
+            public byte[] CardDataEncrypted { get; set; }
+            public string Others { get; set; }
+            public string Status { get; set; }
+            public string CardReader { get; set; }
+            public string Suspicious { get; set; }
+            public bool IsValid { get; set; }
+            public string Exception { get; set; }
+            public string DateEx { get; set; }
+            public string LogText { get; set; }
+            public int ExceptionId { get; set; }
+            public string CardType { get; set; }
+
+        }
+
+        [TestMethod]
+        public void ParseMessageTest()
+        {
+            var text = @"P99912:29:12 10/26/17 P5V1_211";
+
+            var msg = RegexParser.Build(new Dictionary<string, string> {
+                { "Code", @"^.{4}\\,\d{3}$" },
+                { "TimeStamp", @"\d{2}:\d{2}:\d{2}" },
+                { "DateEx", @"\d{2}\/\d{2}\/\d{2}" },
+                { "OriginalSerial", @".{4}_\d{3}.?$\\,.{4}_\d{3}" }
+            }).Parse<Message>(text);
+
+            Assert.AreEqual("999", msg.Code);
+            Assert.AreEqual("12:29:12", msg.TimeStamp);
+            Assert.AreEqual("10/26/17", msg.DateEx);
+            Assert.AreEqual("P5V1_211", msg.OriginalSerial); // use it as Site ID or Serial number
+        }
     }
 }

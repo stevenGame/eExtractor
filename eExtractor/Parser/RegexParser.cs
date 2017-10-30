@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-
+using eExtractor.Extension;
 namespace eExtractor.Parser
 {
     /// <summary>
@@ -81,9 +79,9 @@ namespace eExtractor.Parser
             return _rules.Select(kv =>
                     {
                         var proeprty = someObj.GetType().GetProperty(kv.Key);
-                        string areaRegex = kv.Value.Split(@"\\,")[0];
+                        string areaRegex = kv.Value.Split(@"\\,").TryGet(0);
                         // value extract string is optional if not set use REGEX string match area 
-                        string valueRegex = kv.Value.Split(@"\\,")[1] ?? areaRegex;
+                        string valueRegex = kv.Value.Split(@"\\,").TryGet(1) ?? areaRegex;
 
                         string areaMatch = text.Match(areaRegex);
                         string valueMatch = areaMatch.Match(valueRegex) ?? areaMatch;

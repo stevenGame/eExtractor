@@ -54,9 +54,11 @@
   <ItemGroup>
     <Compile Include="Entity\ISavable.cs" />
     <Compile Include="Entity\SavableEntity.cs" />
+    <Compile Include="Extension\CollectionExtension.cs" />
     <Compile Include="Extension\ObjectExtensions.cs" />
     <Compile Include="Extension\RegexExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Parser\OffsetParser.cs" />
     <Compile Include="Util\FileUtil.cs" />
     <Compile Include="Parser\PDFParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
