@@ -44,20 +44,11 @@ namespace eExtractor.Test
                 new OffsetRule{ Field = "Code", Offset = 1, Length = 3 },
                 new OffsetRule{ Field = "TimeStamp", Offset = 4, Length = 17 },
                 new OffsetRule{ Field = "SenderName", Offset = 22, Length = 8 },
-                //new OffsetRule{ Field = "DateEx", Offset = 13, Length = 8 },
-                //new OffsetRule{ Field = "OriginalSerial", Offset = 44, Length = 12 },
-                //new OffsetRule{ Field = "CardData", Offset = 31, Length = 32 },
-                //new OffsetRule{ Field = "CardReader", Offset = 60, Length = 1 },
-                //new OffsetRule{ Field = "Status", Offset = 61, Length = 1 },
-                //new OffsetRule{ Field = "Suspicious", Offset = 62, Length = 1 },
-                //new OffsetRule{ Field = "FailedPanel", Offset = 31, Length = 21 },
-                //new OffsetRule{ Field = "SerialPanel", Offset = 64, Length = 8 },
-                //new OffsetRule{ Field = "CardType", Offset = 59, Length = 1 }
+             
             });
             var message = extractor.Parse(text);
             Assert.AreEqual("999", message.Code);
             Assert.AreEqual("12:29:12 10/26/17", message.TimeStamp);
-            //Assert.AreEqual("10/26/17", message.DateEx);
             Assert.AreEqual("P5V1_211", message.SenderName);
         }
     }

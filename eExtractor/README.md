@@ -14,7 +14,7 @@ class Foo {
     public string Foo {get;set;}
     public string Bar {get;set;}
 }
- var f1099k = RegexParser.Build(new Dictionary<string, string> {
+ var foo = RegexParser.Build(new Dictionary<string, string> {
                 { "Foo", @"regexFoo" },
                 {"Bar", @"regexBar" }
             }).Parse<Foo>(text);

@@ -30,27 +30,7 @@ namespace eExtractor.Test
                 Assert.AreEqual(federalID, testfile.FederalID);
             }
         }
-        ///// <summary>
-        ///// Don't run it too much will increase the table ID
-        ///// </summary>
-        //[TestMethod]
-        //public void TestCreateNewInmemoryID()
-        //{
-        //    var testFile = new Pdf1099K()
-        //    {
-        //        FileName = "test file name",
-        //        FileLocation = "test",
-        //        FederalID = "x null",
-        //        AccountNum = "x null",
-        //        TaxID = "x null",
-        //        PDFContent = new byte[2]
-        //    };
-        //    testFile.FileName = "XXXXX";
-        //    testFile.Save();
-        //    Assert.AreNotEqual(0, testFile.ID);
-        //    testFile.Delete();
-
-        //}
+      
 
         [TestMethod]
         public void NewInMemoryObjctUpdateTest()
